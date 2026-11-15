@@ -1,0 +1,89 @@
+/* Launch Radar — deep navy, amber value, teal growth. System fonts only. */
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+:root{--bg:#0b1220;--panel:#111c30;--panel2:#0f1930;--line:#1e2d4a;--ink:#e2e8f0;--mut:#94a3b8;--dim:#64748b;--amber:#f5a524;--teal:#2dd4bf;--red:#f87171;--green:#34d399}
+html{background:var(--bg)}
+body{margin:0 auto;max-width:1400px;padding:10px 16px 24px;color:var(--ink);font:13px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+h1{font-size:22px;margin:0;letter-spacing:.2px}
+h2{font-size:14px;margin:0 0 6px}
+h3{font-size:13px;margin:14px 0 4px;color:var(--ink)}
+p{margin:4px 0}
+a{color:var(--teal)}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:10px}
+.sub{color:var(--mut);margin:2px 0 0}
+.badges{display:flex;gap:8px;flex:none;padding-top:4px}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;border:1px solid var(--line);color:var(--mut);white-space:nowrap}
+.badge.ok{color:var(--teal);border-color:#134e4a}
+.badge.wl{color:var(--amber);border-color:#713f12}
+.badge.er{color:var(--teal);border-color:#134e4a}
+.badge.sb{color:#c084fc;border-color:#4c1d95}
+.hero-row{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:12px;margin-bottom:10px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.panel td,.panel th{padding:3px 8px}
+.panel .lede{font-size:14px;font-weight:600;line-height:1.35}
+.panel .small{color:var(--mut);font-size:12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:4px 8px;font-size:11.5px;color:var(--mut)}
+.chip b{color:var(--ink);font-size:12.5px}
+.chip .amber{color:var(--amber)}
+.chip .teal{color:var(--teal)}
+.chip .red{color:var(--red)}
+.formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:6px 8px;margin:6px 0;white-space:pre-wrap}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{padding:4px 8px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mut);font-size:11px;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}
+th.sort{cursor:pointer}
+th.sort:hover{color:var(--ink)}
+tr.row{cursor:pointer}
+tr.row:hover td{background:#152238}
+td.num,th.num{text-align:right;white-space:nowrap}
+td .sub2{display:block;color:var(--mut);font-size:11px}
+td .sub2.mono{font-family:ui-monospace,Menlo,Consolas,monospace}
+.amber{color:var(--amber)}
+.teal{color:var(--teal)}
+.red{color:var(--red)}
+.green{color:var(--green)}
+.mut{color:var(--mut)}
+.tabs{display:flex;gap:6px;margin:2px 0 10px}
+.tabs button{background:var(--panel);border:1px solid var(--line);color:var(--mut);border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer}
+.tabs button.on{background:#1b2a47;color:var(--ink);border-color:#2c4a7a}
+.controls{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-bottom:6px}
+.controls input,.controls select{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:4px 6px;font-size:12px;max-width:160px}
+.controls input{width:130px}
+.controls button{background:var(--panel);border:1px solid var(--line);color:var(--mut);border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer}
+.controls label{color:var(--mut);font-size:11.5px}
+.count{color:var(--mut);font-size:12px;margin:4px 0}
+.note{color:var(--mut);font-size:12.5px}
+.tblwrap{overflow-x:auto}
+.rangebar{position:relative;height:6px;background:#1e2d4a;border-radius:3px;margin:3px 0 1px;min-width:90px}
+.rangebar i{position:absolute;top:-2px;width:10px;height:10px;border-radius:50%;background:var(--amber);margin-left:-5px}
+.rangelab{color:var(--dim);font-size:10.5px;white-space:nowrap}
+.statcards{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:10px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.stat .k{color:var(--mut);font-size:10.5px;text-transform:uppercase;letter-spacing:.5px}
+.stat .v{font-size:19px;font-weight:700;margin:2px 0}
+.stat .s{color:var(--mut);font-size:11.5px}
+.detail-cols{display:grid;grid-template-columns:1fr 1.15fr;gap:12px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:10px}
+.card h3{margin-top:0}
+.steps{list-style:none;margin:0;padding:0;counter-reset:st}
+.steps li{counter-increment:st;display:grid;grid-template-columns:20px 1fr 62px 44px;gap:8px;padding:4px 0;border-bottom:1px solid var(--line);font-size:12.5px;line-height:1.35}
+.steps li:last-child{border-bottom:0}
+.steps li::before{content:counter(st);color:var(--amber);font-weight:700;text-align:center}
+.steps .c,.steps .t{color:var(--mut);font-size:11.5px;text-align:right;white-space:nowrap}
+.econfoot{font-size:12.5px;padding:8px 0 2px;border-top:1px solid var(--line);margin-top:6px}
+.netgrid td,.netgrid th{text-align:right;padding:4px 8px}
+.netgrid td:first-child,.netgrid th:first-child{text-align:left}
+.method{max-width:900px}
+.method section{margin-bottom:16px}
+.method table{width:auto;min-width:420px}
+.method td,.method th{padding:4px 10px}
+footer{margin-top:18px;border-top:1px solid var(--line);padding-top:10px;color:var(--mut);font-size:12px}
+svg text{font:10px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;fill:var(--mut)}
+svg .ax{stroke:var(--line);stroke-width:1}
+svg .grid{stroke:#16233c;stroke-width:1}
+svg .curve{stroke:var(--amber);stroke-width:1.5;fill:none;stroke-dasharray:4 3}
+svg .diag{stroke:var(--teal);stroke-width:1.2;fill:none;stroke-dasharray:4 3}
+svg .band{fill:#2dd4bf;opacity:.08}
+button.back{background:var(--panel);border:1px solid var(--line);color:var(--mut);border-radius:6px;padding:5px 10px;font:inherit;cursor:pointer;margin-bottom:4px}
+.cap{color:var(--mut);font-size:11.5px;margin-top:4px}

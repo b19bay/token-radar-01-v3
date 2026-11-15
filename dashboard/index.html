@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Launch Radar — what each token launch would be worth</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Launch Radar</h1>
+    <p class="sub" id="subtitle"></p>
+  </div>
+  <div class="badges"><span class="badge ok" id="badgeWatch"></span><span class="badge ok" id="badgeRows"></span></div>
+</header>
+<main>
+  <section class="hero-row" id="heroRow">
+    <div class="panel" id="heroPanel"></div>
+    <div class="panel" id="pricePanel"></div>
+    <div class="panel" id="scatterPanel"></div>
+  </section>
+  <nav class="tabs" id="tabs"></nav>
+  <section id="tab-board">
+    <div class="controls" id="controls"></div>
+    <div id="histWrap"></div>
+    <div class="count" id="countLine"></div>
+    <div class="tblwrap"><table id="boardTable"></table></div>
+  </section>
+  <section id="tab-trades" hidden>
+    <div class="controls" id="tradesControls"></div>
+    <div class="count" id="tradesCount"></div>
+    <div class="tblwrap"><table id="tradesTable"></table></div>
+  </section>
+  <section id="tab-aside" hidden>
+    <p class="note" id="asideNote"></p>
+    <div class="chips" id="asideCounts"></div>
+    <div class="tblwrap"><table id="asideTable"></table></div>
+  </section>
+  <section id="tab-method" hidden>
+    <div id="methodBody"></div>
+  </section>
+  <section id="detail" hidden></section>
+</main>
+<footer>
+  <p>Every value on this page is the radar's own estimate from one DefiLlama snapshot, not a forecast that a token will launch and not a claim by make.fun. "Records no token" means DefiLlama carries no token for the protocol, not proof that none exists. Nothing here is financial advice. Source: DefiLlama protocols, fetched 2026-11-14.</p>
+  <p>Built with superbot.gg — a free uncensored model client that keeps the sessions this entry was built in.</p>
+</footer>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
